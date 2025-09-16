@@ -1,0 +1,223 @@
+version: 2
+
+seeds:
+  - name: etablissement_enfants
+    description: "Établissements d’accueil (multi-accueil, familial, etc.) avec informations de localisation, capacité et gestion"
+    columns:
+      - name: nom
+        description: "Nom de l’établissement"
+        tests:
+          - not_null
+
+      - name: type
+        description: "Type d’établissement (Multi-accueil, Accueil familial, etc.)"
+        tests:
+          - not_null
+
+      - name: adresse
+        description: "Adresse complète"
+
+      - name: code_postal
+        description: "Code postal de la commune"
+        tests:
+          - not_null
+
+      - name: commune
+        description: "Nom de la commune"
+        tests:
+          - not_null
+
+      - name: code_insee
+        description: "Code INSEE de la commune"
+        tests:
+          - not_null
+
+      - name: tel
+        description: "Numéro de téléphone de l’établissement"
+
+      - name: gestion
+        description: "Type de gestion (Commune, Associatif, Privé, etc.)"
+
+      - name: gestionnaire
+        description: "Nom de l’organisme gestionnaire"
+
+      - name: capacite
+        description: "Capacité totale d’accueil (nombre de places)"
+        tests:
+          - not_null
+
+      - name: nb_accueil_fam
+        description: "Nombre de places en accueil familial"
+
+      - name: age_mini_mois
+        description: "Âge minimum accepté (en mois)"
+
+      - name: age_maxi_annee
+        description: "Âge maximum accepté (en années)"
+
+      - name: handicap
+        description: "Indique si l’établissement est adapté aux enfants en situation de handicap"
+
+      - name: geo_shape
+        description: "Représentation géographique (GeoJSON)"
+
+      - name: geo_point_2d
+        description: "Coordonnées géographiques (latitude, longitude)"
+ 
+  - name: agrements_assistants_mater_dep
+    description: "Liste des assistantes maternelles aggrées par département (2010-2023)"
+    columns:
+      - name: code_region
+        description: "Code INSEE de la région"
+        tests:
+          - not_null
+      - name: code_departement
+        description: "Code INSEE du département"
+        tests:
+          - not_null
+      - name: departement
+        description: "Nom du département"
+
+  - name: agrements_assistants_matern_reg
+    description: "Agréments d’assistants maternels par region (2010–2023)"
+    columns:
+      - name: code_region
+        description: "Code INSEE de la région"
+        tests:
+          - not_null
+      - name: libelle_region
+        description: "Libellé de la région"
+
+  - name: etablissements_creches_dep
+    description: "Liste des crèches par département (2010-2023)"
+    columns:
+      - name: code_region
+        description: "Code INSEE de la région"
+        tests:
+          - not_null
+      - name: code_departement
+        description: "Code INSEE du département"
+        tests:
+          - not_null
+      - name: departement
+        description: "Nom du département"
+      
+  - name: etablissements_creches_reg
+    description: "Liste des crèches par  region (2010–2023)"
+    columns:
+      - name: code_region
+        description: "Code INSEE de la région"
+        tests:
+          - not_null
+      - name: libelle_region
+        description: "Libellé de la région"
+
+  - name: places_creches_collectives_dep
+    description: "Liste des crèches places en crèches collectives par département (2010-2023)"
+    columns:
+      - name: code_region
+        description: "Code INSEE de la région"
+        tests:
+          - not_null
+      - name: code_departement
+        description: "Code INSEE du département"
+        tests:
+          - not_null
+      - name: departement
+        description: "Nom du département"
+      
+  - name: places_creches_collectives_reg
+    description: "Liste des crèches collectes par region (2010–2023)"
+    columns:
+      - name: code_region
+        description: "Code INSEE de la région"
+        tests:
+          - not_null
+      - name: libelle_region
+        description: "Libellé de la région"
+
+  - name: places_etab_agrees_cat_dep
+    description: "Nombre de places disponibles par établissements agréés par département (2010-2023)"
+    columns:
+      - name: code_region
+        description: "Code INSEE de la région"
+        tests:
+          - not_null
+      - name: code_departement
+        description: "Code INSEE du département"
+        tests:
+          - not_null
+      - name: departement
+        description: "Nom du département"
+      
+  - name: places_etab_agrees_cat_reg
+    description: "Nombre de places disponibles par établissements agréés par region (2010–2023)"
+    columns:
+      - name: code_region
+        description: "Code INSEE de la région"
+        tests:
+          - not_null
+      - name: libelle_region
+        description: "Libellé de la région"
+
+  - name: taux_couverture
+    description: "Taux de couverture des modes d’accueil par commune, département et EPCI"
+    columns:
+      - name: date_reference
+        description: "Année de référence des données"
+        tests:
+          - not_null
+
+      - name: numero_commune
+        description: "Code INSEE de la commune"
+        tests:
+          - not_null
+
+      - name: nom_commune
+        description: "Nom de la commune"
+        tests:
+          - not_null
+
+      - name: numero_epci
+        description: "Code SIREN de l’EPCI"
+        tests:
+          - not_null
+
+      - name: nom_epci
+        description: "Nom de l’EPCI"
+
+      - name: numero_departement
+        description: "Code du département"
+        tests:
+          - not_null
+
+      - name: nom_departement
+        description: "Nom du département"
+        tests:
+          - not_null
+
+      - name: taux_de_couv_eaje_psu
+        description: "Taux de couverture en EAJE PSU (%)"
+
+      - name: taux_de_couv_hors_eaje_psu
+        description: "Taux de couverture hors EAJE PSU (%)"
+
+      - name: taux_de_couv_eaje_-_ensemble
+        description: "Taux de couverture total EAJE (%)"
+
+      - name: taux_de_couv_prescolarisation
+        description: "Taux de préscolarisation (%)"
+
+      - name: taux_de_couv_assistante_maternelle
+        description: "Taux de couverture par assistantes maternelles (%)"
+
+      - name: taux_de_couv_salariee_a_domicile
+        description: "Taux de couverture par salariées à domicile (%)"
+
+      - name: taux_de_couv_accueil_individuel_-_ensemble
+        description: "Taux de couverture global de l’accueil individuel (%)"
+
+      - name: taux_de_couv_global
+        description: "Taux global de couverture des modes d’accueil (%)"
+        tests:
+          - not_null
