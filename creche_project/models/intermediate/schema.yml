@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_agrements_assistants_maternels
+    description: "Table de staging des agréments assistants maternels par département"
+    columns:
+      - name: code_region
+        description: "Code INSEE de la region"
+        tests:
+          - not_null
+      - name: code_departement
+        description: "Code INSEE du département"
+        tests:
+          - not_null
+          - unique
+
+      - name: departement
+        description: "Nom du département"
+        tests:
+          - not_null

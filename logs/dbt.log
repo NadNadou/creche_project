@@ -1,0 +1,99 @@
+[0m13:44:17.890145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106396c60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086ce390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086cdeb0>]}
+
+
+============================== 13:44:17.893024 | 708338f8-8de1-4d4a-b1cd-ed1830041a98 ==============================
+[0m13:44:17.893024 [info ] [MainThread]: Running with dbt=1.10.11
+[0m13:44:17.893303 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'target_path': 'None', 'invocation_command': 'dbt init creche_project', 'indirect_selection': 'eager', 'warn_error': 'None', 'quiet': 'False', 'introspect': 'True', 'profiles_dir': '/Users/nadia/.dbt', 'debug': 'False', 'log_format': 'default', 'log_path': 'logs', 'cache_selected_only': 'False', 'printer_width': '80', 'use_colors': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'write_json': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True'}
+[0m13:44:17.901207 [info ] [MainThread]: Creating dbt configuration folder at /Users/nadia/.dbt
+[0m13:44:17.902028 [debug] [MainThread]: Starter project path: /Users/nadia/Documents/Programmation/Python/python_spendash/venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m13:44:17.904633 [info ] [MainThread]: 
+Your new dbt project "creche_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:44:17.904777 [info ] [MainThread]: Setting up your profile.
+[0m13:46:15.525146 [info ] [MainThread]: Profile creche_project written to /Users/nadia/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m13:46:15.527686 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 117.66593, "process_in_blocks": "0", "process_kernel_time": 0.084277, "process_mem_max_rss": "103235584", "process_out_blocks": "0", "process_user_time": 0.551943}
+[0m13:46:15.527981 [debug] [MainThread]: Command `dbt init` succeeded at 13:46:15.527928 after 117.67 seconds
+[0m13:46:15.528166 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086f48c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10865ae10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10877b140>]}
+[0m13:46:15.528357 [debug] [MainThread]: Flushing usage events
+[0m13:46:15.959471 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:58:13.505873 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105c80ef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e61fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106bc2360>]}
+
+
+============================== 22:58:13.508642 | 705399f6-ac27-4e50-9c94-81893e2530bc ==============================
+[0m22:58:13.508642 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:58:13.508905 [debug] [MainThread]: running dbt with arguments {'log_path': 'logs', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/nadia/.dbt', 'indirect_selection': 'eager', 'empty': 'None', 'use_colors': 'True', 'debug': 'False', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'partial_parse': 'True', 'warn_error': 'None', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'static_parser': 'True', 'invocation_command': 'dbt seed --select stg_agrements_assistants_maternels_2010_2023_dep --show', 'use_experimental_parser': 'False', 'quiet': 'False'}
+[0m22:58:13.509192 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/nadia/Documents/Programmation/Python/creche_project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:58:13.510474 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": false, "command_wall_clock_time": 0.032988418, "process_in_blocks": "0", "process_kernel_time": 0.08438, "process_mem_max_rss": "98975744", "process_out_blocks": "0", "process_user_time": 0.527874}
+[0m22:58:13.510740 [debug] [MainThread]: Command `dbt seed` failed at 22:58:13.510703 after 0.03 seconds
+[0m22:58:13.510885 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b4f110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106bc25a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106bc3bc0>]}
+[0m22:58:13.511030 [debug] [MainThread]: Flushing usage events
+[0m22:58:13.954676 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:18:01.167170 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102cd3410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10521c5f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064363f0>]}
+
+
+============================== 23:18:01.169870 | 1485711e-5650-4a5a-b853-66c0699a8338 ==============================
+[0m23:18:01.169870 [info ] [MainThread]: Running with dbt=1.10.11
+[0m23:18:01.170146 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'cache_selected_only': 'False', 'introspect': 'True', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'profiles_dir': '/Users/nadia/.dbt', 'quiet': 'False', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'printer_width': '80', 'version_check': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt seed', 'static_parser': 'True', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'empty': 'None', 'debug': 'False', 'target_path': 'None'}
+[0m23:18:01.170453 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/nadia/Documents/Programmation/Python/creche_project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:18:01.171778 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": false, "command_wall_clock_time": 0.032202415, "process_in_blocks": "0", "process_kernel_time": 0.067193, "process_mem_max_rss": "96518144", "process_out_blocks": "0", "process_user_time": 0.529255}
+[0m23:18:01.172037 [debug] [MainThread]: Command `dbt seed` failed at 23:18:01.171998 after 0.03 seconds
+[0m23:18:01.172191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063caf60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061a3bc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106436660>]}
+[0m23:18:01.172332 [debug] [MainThread]: Flushing usage events
+[0m23:18:01.608423 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:22:13.829959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108eefc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a442420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a441d90>]}
+
+
+============================== 22:22:13.832780 | 003f75f6-e867-4717-9137-61c6527e7a32 ==============================
+[0m22:22:13.832780 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:22:13.833048 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'use_experimental_parser': 'False', 'empty': 'None', 'fail_fast': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'log_format': 'default', 'profiles_dir': '/Users/nadia/.dbt', 'log_path': 'logs', 'warn_error': 'None', 'log_cache_events': 'False', 'target_path': 'None', 'debug': 'False', 'write_json': 'True', 'partial_parse': 'True', 'static_parser': 'True', 'introspect': 'True', 'printer_width': '80', 'invocation_command': 'dbt init dbt', 'version_check': 'True', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'quiet': 'False'}
+[0m22:22:42.524125 [error] [MainThread]: Encountered an error:
+
+[0m22:22:42.532472 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/nadia/Documents/Programmation/Python/python_spendash/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadia/Documents/Programmation/Python/python_spendash/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadia/Documents/Programmation/Python/python_spendash/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/nadia/Documents/Programmation/Python/python_spendash/venv/lib/python3.12/site-packages/dbt/task/init.py", line 324, in run
+    project_name = self.get_valid_project_name()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadia/Documents/Programmation/Python/python_spendash/venv/lib/python3.12/site-packages/dbt/task/init.py", line 278, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadia/Documents/Programmation/Python/python_spendash/venv/lib/python3.12/site-packages/click/termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadia/Documents/Programmation/Python/python_spendash/venv/lib/python3.12/site-packages/click/termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m22:22:42.541399 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 28.736807, "process_in_blocks": "0", "process_kernel_time": 0.10855, "process_mem_max_rss": "98222080", "process_out_blocks": "0", "process_user_time": 0.523303}
+[0m22:22:42.542546 [debug] [MainThread]: Command `dbt init` failed at 22:22:42.542382 after 28.74 seconds
+[0m22:22:42.543079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109c73320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a2da180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a123620>]}
+[0m22:22:42.543533 [debug] [MainThread]: Flushing usage events
+[0m22:22:42.994232 [debug] [MainThread]: An error was encountered while trying to flush usage events
