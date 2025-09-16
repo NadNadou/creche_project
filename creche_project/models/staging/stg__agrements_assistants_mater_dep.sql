@@ -1,4 +1,5 @@
 {{ config(materialized='view') }}
 
-select *
+select 
+   *
 from {{ ref('agrements_assistants_mater_dep') }}
