@@ -1,0 +1,19 @@
+select
+    code_region,
+    code_departement,
+    departement,
+    Y2010,
+    Y2011,
+    Y2012,
+    Y2013,
+    Y2014,
+    Y2015,
+    Y2016,
+    Y2017,
+    Y2018,
+    Y2019,
+    Y2020,
+    Y2021,
+    Y2022,
+    Y2023
+from {{ ref('agrements_assistants_matern_dep') }}
