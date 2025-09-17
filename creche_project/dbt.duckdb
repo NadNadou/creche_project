@@ -1,6 +1,0 @@
-import duckdb
-
-con = duckdb.connect("dev.duckdb")
-
-df = con.execute("select * from int__offre_accueil limit 10").fetchdf()
-print(df)
