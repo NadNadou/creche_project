@@ -18,6 +18,3 @@ __pycache__/
 
 # Other
 script
-
-data/raw/communes.geojson
-data/raw/departements.geojson
