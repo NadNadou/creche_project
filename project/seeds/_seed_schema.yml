@@ -1,0 +1,164 @@
+version: 2
+
+seed:
+  - name: tab23_dees
+    description: Nombre d'établissements de crèches collectives, de 2015 à 2023, par département (source - DREES)
+    columns:
+      - name: code_region
+      - name: code_departement
+      - name: departement
+      - name: annee
+      - name: valeur
+      - name: desciption
+
+  - name: tab24_dees
+    desciption: Nombre d'établissements de crèches familiales, de 2010 à 2023, par département (source - DREES)
+    columns:
+      - name: code_region
+      - name: code_departement
+      - name: departement
+      - name: annee
+      - name: valeur
+      - name: desciption
+
+  - name: tab27_dees
+    description: Nombre d'établissements et services à gestion parentale, de 2015 à 2023, par département (source - DREES)
+    columns:
+      - name: code_region
+      - name: code_departement
+      - name: departement
+      - name: annee
+      - name: valeur
+      - name: desciption
+  
+  - name: tab28_dees
+    description: Nombre de places en crèches collectives, de 2015 à 2023, par département (source - DREES)
+    columns:
+      - name: code_region
+      - name: code_departement
+      - name: departement
+      - name: annee
+      - name: valeur
+      - name: desciption
+
+  - name: tab32_dees
+    description: Tableau 33 - Nombre d'agréments d'assistants maternels en cours de validité au 31 décembre, de 2010 à 2023, par département (source - DREES)
+    columns:
+      - name: code_region
+      - name: code_departement
+      - name: departement
+      - name: annee
+      - name: valeur
+      - name: desciption
+
+  - name: tab33_dees
+    description:  Nombre de places en établissements et services à gestion parentale, de 2015 à 2023, par département (source - DREES)
+    columns:
+      - name: code_region
+      - name: code_departement
+      - name: departement
+      - name: annee
+      - name: valeur
+      - name: desciption
+
+  - name: tx_couverture
+    description: Taux de couverture d’accueil du jeune enfant (source - CAF)
+    columns:
+      - name: date_reference
+        description: "Description de date_reference"
+      - name: numero_commune
+        description: "Description de numero_commune"
+      - name: nom_commune
+        description: "Description de nom_commune"
+      - name: numero_epci
+        description: "Description de numero_epci"
+      - name: nom_epci
+        description: "Description de nom_epci"
+      - name: numero_departement
+        description: "Description de numero_departement"
+      - name: nom_departement
+        description: "Description de nom_departement"
+      - name: taux_de_couv_eaje_psu
+        description: "Description de taux_de_couv_eaje_psu"
+      - name: taux_de_couv_hors_eaje_psu
+        description: "Description de taux_de_couv_hors_eaje_psu"
+      - name: taux_de_couv_eaje_ensemble
+        description: "Description de taux_de_couv_eaje_ensemble"
+      - name: taux_de_couv_prescolarisation
+        description: "Description de taux_de_couv_prescolarisation"
+      - name: taux_de_couv_assistante_maternelle
+        description: "Description de taux_de_couv_assistante_maternelle"
+      - name: taux_de_couv_salariee_a_domicile
+        description: "Description de taux_de_couv_salariee_a_domicile"
+      - name: taux_de_couv_accueil_individuel_ensemble
+        description: "Description de taux_de_couv_accueil_individuel_ensemble"
+      - name: taux_de_couv_global
+        description: "Description de taux_de_couv_global"
+
+  - name: nbpla_pe_caf
+    desciption: Offre d'accueil formel pour les enfants de moins de 3 ans en nombre de places proposées au mois de décembre de l'année N, à l'échelle communale, pour les communes de plus de 10 000 habitants, depuis 2017. Source - CAF
+    columns:
+      - name: date_reference
+        description: "Description de date_reference"
+      - name: num_commune
+        description: "Description de num_commune"
+      - name: nom_commune
+        description: "Description de nom_commune"
+      - name: numero_EPCI
+        description: "Description de numero_EPCI"
+      - name: nom_EPCI
+        description: "Description de nom_EPCI"
+      - name: numero_departement
+        description: "Description de numero_departement"
+      - name: nom_departement
+        description: "Description de nom_departement"
+      - name: places_EAJE_PSU
+        description: "Description de places_EAJE_PSU"
+      - name: places_hors_EAJE_PSU
+        description: "Description de places_hors_EAJE_PSU"
+      - name: places_EAJE_ensemble
+        description: "Description de places_EAJE_ensemble"
+      - name: places_prescolarisation
+        description: "Description de places_prescolarisation"
+      - name: places_assistante_maternelle
+        description: "Description de places_assistante_maternelle"
+      - name: places_salariee_domicile
+        description: "Description de places_salariee_domicile"
+      - name: places_accueil_individuel_ensemble
+        description: "Description de places_accueil_individuel_ensemble"
+      - name: places_offertes_ensemble
+        description: "Description de places_offertes_ensemble"
+  
+  - name: naissance_communes_data
+    description: "Statistiques annuelles des naissances en France - source INSEE"
+    columns:
+      - name: EC_MEASURE
+        description: |
+          Mesure d’état civil.
+          Codes :
+            - LVB : Nombre de naissances vivantes
+      - name: FREQ
+        description: |
+          Fréquence de la donnée.
+          Codes :
+            - A : Annuel
+      - name: GEO
+        description: |
+          Code géographique de l’unité statistique (commune, département, etc.).
+      - name: GEO_OBJECT
+        description: |
+          Type de l’unité géographique.
+          Exemple :
+            - COM : Commune
+      - name: OBS_STATUS
+        description: |
+          Statut de l’observation.
+          Codes :
+            - A : Normale
+            - M : Valeur manquante (les données n’existent pas)
+      - name: TIME_PERIOD
+        description: |
+          Période temporelle (année de référence).
+      - name: OBS_VALUE
+        description: |
+          Valeur observée : nombre de naissances vivantes.

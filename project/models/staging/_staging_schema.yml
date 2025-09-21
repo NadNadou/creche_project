@@ -1,0 +1,216 @@
+version: 2
+
+models:
+  - name: stg__tx_couverture
+    description: "Taux de couverture des modes d’accueil par commune, département et EPCI"
+    columns:
+      - name: date_reference
+      - name: numero_commune
+      - name: nom_commune
+      - name: numero_epci
+      - name: nom_epci
+      - name: numero_departement
+      - name: nom_departement
+      - name: taux_de_couv_eaje_psu
+      - name: taux_de_couv_hors_eaje_psu
+      - name: taux_de_couv_prescolarisation
+      - name: taux_de_couv_assistante_maternelle
+      - name: taux_de_couv_salariee_a_domicile
+
+  - name: stg__nbpla_pe_caf
+    description: "Mesure le nombre de places d’accueil “formel” pour les moins de 3 ans, en décembre de l’année N, par commune, depuis 2017, pour les communes > 10 000 habitants."
+    columns:
+      - name: date_reference
+      - name: num_commune
+      - name: nom_commune
+      - name: numero_EPCI
+      - name: nom_EPCI
+      - name: numero_departement
+      - name: nom_departement
+      - name: places_EAJE_PSU
+      - name: places_hors_EAJE_PSU
+      - name: places_EAJE_ensemble
+      - name: places_prescolarisation
+      - name: places_assistante_maternelle
+      - name: places_salariee_domicile
+      - name: places_accueil_individuel_ensemble
+      - name: places_offertes_ensemble
+
+  - name: tx_couverture
+    description: "Taux de couverture des modes d’accueil formels pour les enfants de moins de 3 ans, estimé au niveau communal (communes >10 000 habitants) depuis 2017. Indique l’offre théorique en décembre de l’année N."
+    columns:
+      - name: date_reference
+        data_type: integer
+        description: "Année de référence sur lesquelles porte les données"
+
+      - name: numero_commune
+        data_type: varchar
+        description: "Numéro de la commune au sens de l'Insee"
+
+      - name: nom_commune
+        data_type: varchar
+        description: "Libellé de la commune au sens de l'Insee"
+
+      - name: numero_epci
+        data_type: varchar
+        description: "Numéro Siren d’identification d’un Epci auquel appartient une commune"
+
+      - name: nom_epci
+        data_type: varchar
+        description: "Nom d'un EPCI auquel appartient une commune"
+
+      - name: numero_departement
+        data_type: varchar
+        description: "Code du département"
+
+      - name: nom_departement
+        data_type: varchar
+        description: "Nom du département"
+
+      - name: taux_de_couv_eaje_psu
+        data_type: double
+        description: "Taux de couverture des enfants de moins de 3 ans par une offre en EAJE financés par la PSU (multi-accueil, familial, parental et micro crèche)"
+
+      - name: taux_de_couv_hors_eaje_psu
+        data_type: double
+        description: "Taux de couverture des enfants de moins de 3 ans par une offre d'accueil en EAJE hors EAJE financés par la PSU (micro-crèches financées par la PAJE et crèches d'entreprises) "
+
+      - name: taux_de_couv_eaje_ensemble
+        data_type: double
+        description: "Taux de couverture des enfants de moins de 3 ans par une offre en EAJE"
+
+      - name: taux_de_couv_prescolarisation
+        data_type: double
+        description: "Taux de couverture des enfants de moins de 3 ans par un accueil en école préélémentaire"
+
+      - name: taux_de_couv_assistante_maternelle
+        data_type: double
+        description: "Taux de couverture des enfants de moins de 3 ans par une offre chez une assistante maternelle"
+
+      - name: taux_de_couv_salariee_a_domicile
+        data_type: double
+        description: "Taux de couverture des enfants de moins de 3 ans par une offre chez une salariée à domicile"
+
+      - name: taux_de_couv_accueil_individuel_ensemble
+        data_type: double
+        description: "Taux de couverture des enfants de moins de 3 ans par une offre d'accueil individuel"
+
+      - name: taux_de_couv_global
+        data_type: double
+        description: "Taux de couverture des enfants de moins de 3 ans par une offre d'accueil du jeune enfant"
+
+  - name: stg__tab23_dees
+    columns:
+      - name: code_region
+        data_type: integer
+      - name: code_departement
+        data_type: integer
+
+      - name: departement
+        data_type: varchar
+
+      - name: annee
+        data_type: integer
+
+      - name: valeur
+        data_type: integer
+
+  - name: stg__tab24_dees
+    columns:
+
+      - name: code_region
+        data_type: integer    
+      - name: code_departement
+        data_type: integer
+
+      - name: departement
+        data_type: varchar
+
+      - name: annee
+        data_type: integer
+
+      - name: valeur
+        data_type: integer
+
+  - name: stg__tab27_dees
+    columns:
+
+      - name: code_region
+        data_type: integer    
+      - name: code_departement
+        data_type: integer
+
+      - name: departement
+        data_type: varchar
+
+      - name: annee
+        data_type: integer
+
+      - name: valeur
+        data_type: integer
+
+  - name: stg__tab28_dees
+    columns:
+
+      - name: code_region
+        data_type: integer    
+      - name: code_departement
+        data_type: integer
+
+      - name: departement
+        data_type: varchar
+
+      - name: annee
+        data_type: integer
+
+      - name: valeur
+        data_type: integer
+
+  - name: stg__tab32_dees
+    columns:
+
+      - name: code_region
+        data_type: integer    
+      - name: code_departement
+        data_type: integer
+
+      - name: departement
+        data_type: varchar
+
+      - name: annee
+        data_type: integer
+
+      - name: valeur
+        data_type: integer
+
+  - name: stg__tab33_dees
+    columns:
+
+      - name: code_region
+        data_type: integer    
+      - name: code_departement
+        data_type: integer
+      - name: departement
+        data_type: varchar
+      - name: annee
+        data_type: integer
+      - name: valeur
+        data_type: integer
+
+  - name: stg__naissance_communes_data
+    columns:
+      - name: ec_measure
+        data_type: varchar
+      - name: freq
+        data_type: varchar
+      - name: geo
+        data_type: varchar
+      - name: geo_object
+        data_type: varchar
+      - name: obs_status
+        data_type: varchar
+      - name: time_period
+        data_type: integer
+      - name: obs_value
+        data_type: integer
+  

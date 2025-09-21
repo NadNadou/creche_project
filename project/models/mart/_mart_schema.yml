@@ -1,0 +1,114 @@
+version: 2
+
+models:
+  - name: ratio_places_naissances_communes
+    description: |
+      Table MART croisant les données de naissances (INSEE) et de places en crèches (CAF)
+      au niveau communal, pour calculer un indicateur de disponibilité relative.
+
+      Chaque ligne correspond à une commune et une année, avec :
+      - nb_naissances : nombre de naissances vivantes domiciliées dans la commune
+      - nb_places : nombre total de places d’accueil formel disponibles (CAF)
+      - ratio_places_par_naissance : rapport entre l’offre et la demande potentielle
+
+      Rôle :
+      - Fournir un indicateur synthétique de l’accessibilité aux places en crèche
+        à l’échelle communale
+      - Permettre d’identifier les communes où l’offre est particulièrement faible
+        ou élevée par rapport aux besoins
+      - Servir de base à des comparaisons temporelles ou territoriales (ex. Île-de-France)
+    columns:
+      - name: annee
+        data_type: integer
+      - name: code_commune
+        data_type: varchar
+      - name: nom_commune
+        data_type: string
+      - name: nb_naissances
+        data_type: hugeint
+      - name: nb_places
+        data_type: hugeint
+      - name: ratio_places_par_naissance
+        data_type: double
+
+  - name: ratio_places_naissances_departements
+    description: |
+      Table MART croisant les données de naissances (INSEE) et de places en crèches (CAF)
+      au niveau departemental, pour calculer un indicateur de disponibilité relative.
+
+      Chaque ligne correspond à un departement et une année, avec :
+      - nb_naissances : nombre de naissances vivantes domiciliées dans la commune
+      - nb_places : nombre total de places d’accueil formel disponibles (CAF)
+      - ratio_places_par_naissance : rapport entre l’offre et la demande potentielle
+
+      Rôle :
+      - Fournir un indicateur synthétique de l’accessibilité aux places en crèche
+        à l’échelle départemental
+      - Permettre d’identifier les départements où l’offre est particulièrement faible
+        ou élevée par rapport aux besoins
+      - Servir de base à des comparaisons temporelles ou territoriales (ex. Île-de-France)
+    columns:
+        - name: annee
+          data_type: integer
+        - name: code_departement
+          data_type: varchar
+        - name: departement
+          data_type: varchar
+        - name: nb_naissances
+          data_type: hugeint
+        - name: nb_places
+          data_type: hugeint
+        - name: ratio_places_par_naissance
+          data_type: double
+
+  - name: tx_couverture_enrichi
+    description: |
+      Table MART croisant les données de couverture d’accueil de la CAF avec
+      le nombre de naissances (INSEE), limitée à l’Île-de-France
+      (départements 75, 77, 78, 91, 92, 93, 94, 95).
+
+      Chaque ligne correspond à une commune et une année, avec :
+      - nb_naissances : nombre de naissances vivantes domiciliées dans la commune
+      - taux_de_couv_* : indicateurs CAF de taux de couverture par type de mode d’accueil
+        (EAJE PSU, hors EAJE PSU, préscolarisation, assistantes maternelles,
+        salariée à domicile, global)
+      - nb_enfants_couverts_estime : estimation du nombre d’enfants couverts,
+        calculée comme (taux de couverture global × nb_naissances / 100)
+
+      Rôle :
+      - Mettre en relation l’offre relative (taux de couverture) avec la
+        demande potentielle (naissances)
+      - Fournir une mesure en effectifs concrets (nombre d’enfants couverts estimé)
+      - Servir de base pour des comparaisons territoriales et temporelles
+        en Île-de-France
+    columns:
+      - name: annee
+        data_type: integer
+      - name: code_commune
+        data_type: varchar
+      - name: nom_commune
+        data_type: varchar
+      - name: code_epci
+        data_type: varchar
+      - name: nom_epci
+        data_type: varchar
+      - name: code_departement
+        data_type: varchar
+      - name: nom_departement
+        data_type: varchar
+      - name: nb_naissances
+        data_type: hugeint
+      - name: taux_de_couv_eaje_psu
+        data_type: double
+      - name: taux_de_couv_hors_eaje_psu
+        data_type: double
+      - name: taux_de_couv_prescolarisation
+        data_type: double
+      - name: taux_de_couv_assistante_maternelle
+        data_type: double
+      - name: taux_de_couv_salariee_a_domicile
+        data_type: double
+      - name: taux_de_couv_global
+        data_type: double
+      - name: nb_enfants_couverts_estime
+        data_type: double

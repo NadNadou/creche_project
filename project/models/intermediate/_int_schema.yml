@@ -1,0 +1,144 @@
+version: 2
+
+models:
+  - name: int__naissances_communes
+    description: |
+      Table intermédiaire agrégeant les données INSEE sur les naissances vivantes.
+      Chaque ligne correspond au nombre total de naissances par commune et par année,
+      calculé à partir du fichier source `naissance_communes_data`.
+      Périmètre : Ile-de-France
+      
+      Rôle :
+      - Normaliser les données de naissance au format attendu
+      - Fournir un indicateur de la "demande potentielle" de places en crèche
+      - Servir de base pour le calcul des ratios offre/demande au niveau communa
+    columns:
+      - name: geo
+        data_type: varchar
+
+      - name: time_period
+        data_type: integer
+
+      - name: value
+        data_type: hugeint
+
+  - name: int__places_caf_communes
+    description: |
+      Table intermédiaire construite à partir du fichier `nbpla_pe_caf` (CAF).
+      Elle agrège le nombre total de places offertes en accueil formel
+      pour les enfants de moins de 3 ans, au mois de décembre,
+      limité aux communes d’Île-de-France de plus de 10 000 habitants,
+      et pour les années 2017, 2018, 2019 et 2022.
+
+      Contenu principal :
+      - code et nom de la commune
+      - année de référence (date_reference)
+      - nombre total de places disponibles (somme de `places_offertes_ensemble`)
+
+      Rôle :
+      - Fournir une mesure de l’offre d’accueil en crèche sur le territoire francilien
+      - Préparer les calculs de ratios offre/demande (comparés aux naissances)
+      - Normaliser les données CAF pour être utilisées dans les MART
+    columns:
+      - name: date_reference
+        data_type: integer
+      - name: num_commune
+        data_type: varchar
+      - name: nom_commune
+        data_type: varchar
+      - name: value
+        data_type: hugeint
+
+  - name: int__places_drees_departements
+    description: |
+      Table intermédiaire construite à partir des différentes sources DREES
+      (`tab23_dees`, `tab24_dees`, `tab27_dees`, `tab28_dees`, `tab32_dees`, `tab33_dees`).
+      Elle consolide les données au niveau départemental et annuel en ne conservant
+      que les combinaisons (année, département) présentes dans toutes les tables.
+      Limité aux communes d’Île-de-France et pour les années 2017, 2018, 2019 et 2022.
+
+      Contenu principal :
+      - code_departement
+      - année de référence
+      - nombre d’établissements de crèches collectives
+      - nombre d’établissements de crèches familiales
+      - nombre d’établissements à gestion parentale
+      - nombre de places en crèches collectives
+      - nombre d’agréments d’assistants maternels
+      - nombre de places en structures à gestion parentale
+
+      Rôle :
+      - Fournir une vue consolidée de l’offre d’accueil en petite enfance
+        au niveau départemental
+      - Servir de base pour les comparaisons avec la demande (données de naissances)
+      - Alimenter les MART orientées analyse (ratio offre/demande)
+    columns:
+      - name: annee
+        data_type: integer
+      - name: code_departement
+        data_type: integer
+      - name: nb_etab_creches_collectives
+        data_type: hugeint
+      - name: nb_etab_creches_familiales
+        data_type: hugeint
+      - name: nb_etab_gestion_parentale
+        data_type: hugeint
+      - name: nb_places_creches_collectives
+        data_type: hugeint
+      - name: nb_agrements_assistants_maternels
+        data_type: hugeint
+      - name: nb_places_gestion_parentale
+        data_type: hugeint
+
+  - name: int__tx_couverture
+    description: |
+      Table intermédiaire construite à partir du fichier `tx_couverture` (CAF),
+      filtrée sur l’Île-de-France (départements 75, 77, 78, 91, 92, 93, 94, 95)
+      et les années 2017, 2018, 2019 et 2022.
+
+      Elle fournit les taux de couverture des différents modes d’accueil
+      pour les enfants de moins de 3 ans, à l’échelle communale (avec rattachement aux EPCI et départements).
+
+      Contenu principal :
+      - code_commune, nom_commune
+      - code_epci, nom_epci
+      - code_departement, nom_departement
+      - année de référence (annee)
+      - taux de couverture :
+        * EAJE PSU
+        * hors EAJE PSU
+        * ensemble EAJE
+        * préscolarisation
+        * assistantes maternelles
+        * salariée à domicile
+
+      Rôle :
+      - Fournir une mesure normalisée et filtrée de l’**offre d’accueil relative**
+        en Île-de-France
+      - Préparer les comparaisons avec la demande (naissances)
+      - Alimenter les MART d’analyse territoriale
+    columns:
+      - name: annee
+        data_type: integer
+      - name: code_commune
+        data_type: varchar
+      - name: nom_commune
+        data_type: varchar
+      - name: code_epci
+        data_type: varchar
+      - name: nom_epci
+        data_type: varchar
+      - name: code_departement
+        data_type: varchar
+      - name: nom_departement
+        data_type: varchar
+      - name: taux_de_couv_eaje_psu
+        data_type: double
+      - name: taux_de_couv_hors_eaje_psu
+        data_type: double
+      - name: taux_de_couv_prescolarisation
+        data_type: double
+      - name: taux_de_couv_assistante_maternelle
+        data_type: double
+      - name: taux_de_couv_salariee_a_domicile
+        data_type: double
