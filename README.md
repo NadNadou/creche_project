@@ -15,6 +15,8 @@ En France, plusieurs types de structures accueillent les jeunes enfants :
   - Multi-accueils : combinent différents types d’accueil (régulier ou occasionnel) pour les moins de 4 ans.
   - Micro-crèches : petites structures collectives pour les moins de 6 ans, limitées à 10 enfants simultanément.
 
+Ce projet a été motivé par un événement récent : la fermeture soudaine de plusieurs crèches en France, qui a laissé de nombreux parents sans solution de garde à une semaine de la rentrée. Cet épisode m’a poussé à explorer les données publiques afin de mieux comprendre l’offre d’accueil en crèches, ses disparités territoriales et son évolution au fil du temps.
+
 ## Périmètre de l'anlyse
 
   - Zone étudiée : île-de-France
