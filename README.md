@@ -26,7 +26,7 @@ Ce projet a été motivé par un événement récent : la fermeture soudaine de 
 
 ## Sources de données
 
-Le projet s’appuie sur plusieurs jeux de données publiques provenant d’organismes officiel : 
+Le projet s’appuie sur plusieurs jeux de données publiques provenant d’organismes officiels : 
 
 - **DREES** (data.drees.solidarites-sante.gouv.fr) -  (Direction de la Recherche, des Études, de l’Évaluation et des Statistiques) : données sur les établissements d’accueil du jeune enfant
   - Tableau 23 : Nombre d’établissements de crèches collectives (2015–2023, par département)  
