@@ -28,7 +28,7 @@ Ce projet a été motivé par un événement récent : la fermeture soudaine de 
 
 Le projet s’appuie sur plusieurs jeux de données publiques provenant d’organismes officiels : 
 
-- **DREES** (data.drees.solidarites-sante.gouv.fr) -  (Direction de la Recherche, des Études, de l’Évaluation et des Statistiques) : données sur les établissements d’accueil du jeune enfant
+- **DREES** (data.drees.solidarites-sante.gouv.fr) -  (Direction de la Recherche, des Études, de l’Évaluation et des Statistiques) : données sur les établissements d’accueil du jeune enfant (https://data.drees.solidarites-sante.gouv.fr/explore/dataset/331_l-offre-d-accueil-du-jeune-enfant/information/)
   - Tableau 23 : Nombre d’établissements de crèches collectives (2015–2023, par département)  
   - Tableau 24 : Nombre d’établissements de crèches familiales (2010–2023, par département)  
   - Tableau 27 : Nombre d’établissements et services à gestion parentale (2015–2023, par département)  
@@ -37,16 +37,16 @@ Le projet s’appuie sur plusieurs jeux de données publiques provenant d’orga
   - Tableau 32 : Nombre de places en établissements/services à gestion parentale (2015–2023, par département)  
   - Tableau 33 : Nombre d’agréments d’assistants maternels en cours de validité (2010–2023, par département)  
 
-- **INSEE** (insee.fr) - (Institut National de la Statistique et des Études Économiques) : statistiques annuelles des naissances
+- **INSEE** (insee.fr) - (Institut National de la Statistique et des Études Économiques) : statistiques annuelles des naissances (https://www.insee.fr/fr/statistiques/1893255#consulter)
   - DS_ETAT_CIVIL_NAIS_COMMUNES_data : Statistiques annuelles des naissances en France  
 
 - **CAFdata** (data.caf.fr) - (Caisses d’Allocations Familiales) : indicateurs sur l’offre d’accueil et le taux de couverture
-  - tx_couverture : Taux de couverture d’accueil du jeune enfant  
-  - nbpla_pe_caf : Offre d’accueil formel pour les enfants de moins de 3 ans  
+  - tx_couverture : Taux de couverture d’accueil du jeune enfant '(https://data.caf.fr/explore/dataset/txcouv_pe_com/table/?utm_source=chatgpt.com&disjunctive.annee)
+  - nbpla_pe_caf : Offre d’accueil formel pour les enfants de moins de 3 ans (https://data.caf.fr/explore/dataset/nbpla_pe_com/information/)
 
-- **Data.gouv.fr**  Plateforme française d’Open Data, utilisée pour les référentiels géographiques (communes, départements).  
-  - communes.json : Ensemble des communes de France  
-  - departements.json : Ensemble des départements de France  
+- **Data.gouv.fr**  Plateforme française d’Open Data, utilisée pour les référentiels géographiques (communes, départements). 
+  - communes.json : Ensemble des communes de France (https://www.data.gouv.fr/datasets/contours-communes-france-administrative-format-admin-express-avec-arrondissements/) 
+  - departements.json : Ensemble des départements de France  (https://www.data.gouv.fr/datasets/contours-des-departements/)
 
 
 ## Pipeline / Architecture
@@ -55,6 +55,7 @@ Le projet s’appuie sur plusieurs jeux de données publiques provenant d’orga
   - Transformation : intégration et préparation des données dans DuckDB via dbt, avec nettoyage, uniformisation des formats et gestion des valeurs manquantes
   - Chargement : stockage dans un format structuré (CSV exploitable).
   - Visualisation : production de cartes intéractives par année avec Folium pour visualiser la répartiton géographique des crèches. 
+
 ## Stack
 
 Stack principale :
